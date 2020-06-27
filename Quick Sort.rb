@@ -5,15 +5,15 @@ def func(array, left, right)
   low = left + 1
   high = right
 
-  if right - left > 0
+  if right > left
     while low < high
       low += 1 while array[low] <= array[pivot] && low < right
       high -= 1 while array[high] > array[pivot] && high > left
-      if low < high
-        temp = array[low]
-        array[low] = array[high]
-        array[high] = temp
-      end
+      next unless low < high
+
+      temp = array[low]
+      array[low] = array[high]
+      array[high] = temp
     end
     if array[high] <= array[pivot]
       temp = array[pivot]
