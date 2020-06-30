@@ -35,6 +35,46 @@ class MaxHeap
     end
   end
 
+  def delete_node
+    # @heap[0] = nil
+    # @heap[0] = @heap.pop
+
+    # @heap.delete_at(0)
+    # @heap.insert(0, @heap.pop)
+
+    # 첫번째 요소(루트, 최대값(최소값))를 삭제한다.
+    @heap.shift
+    index = 0
+    # 루트를 삭제하고 마지막 노드를 루트자리에 옮긴다
+    @heap.unshift(@heap.pop)
+    # 자식이 존재한다면 반복
+    while @heap[(index + 1) * 2] != nil
+      # 새로 생긴 루트와 자식 노드(j * 2, (j * 2) + 1)들을 비교한다.
+      # 세개의 값 중 가장 큰 값이 루트 노드가 된다.
+      # 배열은 0부터 시작하기 때문에 먼저 +1을 해서 자식을 구해주고
+      # -1을 하여 배열의 연산에 맞게 변환해준다.
+      child1 = ((index + 1) * 2) - 1
+      child2 = ((index + 1) * 2)
+      # 첫번째 자식은 존재하지만 두번째 자식은 존재하지 않거나
+      # 첫번째 자식이 두번째 자식보다 크다면 첫번째 자식과 비교
+      compare = if @heap[child2].nil? || @heap[child1] > @heap[child2]
+                  child1
+                else
+                  child2
+                end
+      if @heap[index] < @heap[compare]
+        temp = @heap[index]
+        @heap[index] = @heap[compare]
+        @heap[compare] = temp
+        # 자식이 더 크다면 자식의 위치로 가서 다시 자식을 탐색
+        index = compare
+      else
+        # 자식이 더 작거나 같다면 반복문을 빠져나가기 위해 index 값 변경
+        index = @heap.length
+      end
+    end
+  end
+
   def read_node
     p @heap
   end
@@ -49,3 +89,6 @@ heap.insert_node(7)
 heap.insert_node(6)
 heap.read_node
 heap.delete_node
+heap.read_node
+heap.delete_node
+heap.read_node
