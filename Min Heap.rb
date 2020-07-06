@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class MaxHeap
+class MinHeap
   def initialize
     @heap = []
   end
@@ -80,7 +80,7 @@ class MaxHeap
   end
 end
 
-heap = MaxHeap.new
+heap = MinHeap.new
 heap.insert_node(2)
 heap.insert_node(3)
 heap.insert_node(5)

@@ -27,6 +27,7 @@ def func(array, left, right)
 end
 
 # rand_arr = [1, 0, 10, 2, 10, 7, 1, 6, 2, 8]
+# rand_arr = [8, 8, 7, 8, 6, 4, 7, 1, 6, 1]
 
 rand_arr = []
 10.times do

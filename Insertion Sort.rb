@@ -25,6 +25,8 @@ p arr
     if val1 < arr[j]
       arr[j + 1] = arr[j]
       arr[j] = val1
+    else
+      break
     end
   end
 end
