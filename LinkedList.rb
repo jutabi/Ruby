@@ -16,8 +16,12 @@ class LinkedList
 
   def insert_node(value)
     cur_node = @head
-    cur_node = cur_node.next until cur_node.next.nil?
-    cur_node.next = Node.new(cur_node, value, nil)
+    if @head.nil?
+      @head = Node.new(nil, value, nil)
+    else
+      cur_node = cur_node.next until cur_node.next.nil?
+      cur_node.next = Node.new(cur_node, value, nil)
+    end
   end
 
   def delete_node(value)
@@ -72,4 +76,8 @@ list.read_nodes
 
 list.delete_node(2)
 print 'last result: '
+list.read_nodes
+
+list.insert_node(3)
+print 'result: '
 list.read_nodes
