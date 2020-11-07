@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Development-Knowledge/.idea/Development-Knowledge.iml" filepath="$PROJECT_DIR$/../Development-Knowledge/.idea/Development-Knowledge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Rails/.idea/Rails.iml" filepath="$PROJECT_DIR$/../Rails/.idea/Rails.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Ruby.iml" filepath="$PROJECT_DIR$/.idea/Ruby.iml" />
     </modules>
   </component>
